@@ -1,0 +1,52 @@
+.pl10 {padding-left: 10px;}
+.pr10 {padding-right: 10px;}
+.pr15 {padding-right: 15px;}
+
+.h100p {
+    height: 100%;
+}
+
+
+.w20p {
+    width: 20%;
+}
+.w30p {
+    width: 30%;
+}
+.w70p {
+    width: 70%;
+}
+.w80p {
+    width: 80%;
+}
+
+.p15 {
+    padding: 15px;
+}
+
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+.br {
+    border-right: 1px solid #ccc;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.ellipse {
+    display: inline-block;
+    border: 1px solid;
+    width: 80px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.cursor{
+    cursor: pointer;
+}

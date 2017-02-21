@@ -1,3 +1,7 @@
+.cruise {
+    padding: 0px 30px;
+}
+
 .tabs {
     border-bottom: 1px solid #ddd;
     text-align: right;
@@ -34,12 +38,55 @@ ul.tabs li.active a {
 .tab-content {
     border: 1px solid #ccc;
     border-top: none;
-    padding: 15px;
 }
 
 .tab-content .tab-panel {
-    display: none
+    display: none;
 }
 .tab-content .tab-panel.active {
     display: block;
+}
+
+.tab-content .content-header {
+    padding: 15px;
+    background-color: #545353;
+    color: #e0dfdf;
+}
+
+.tab-content .content-header span {
+    margin: 0px 20px;
+}
+
+.agents .content-body :first-child {
+    border-right: 1px solid #ccc;
+}
+
+.agents-list {
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.agents-list li {
+    padding: 10px;
+    margin: 15px 10px;
+    display: block;
+    border: 1px solid #444;
+    border-radius: 6px;
+    /**清除浮动*/
+    overflow: hidden;
+    zoom: 1;
+}
+
+.circle {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #ccc;
+    border-radius: 20px;
+}
+
+.split::before {
+    content: "|";
+    color: #bbb;
+    padding: 5px;
 }
