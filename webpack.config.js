@@ -48,16 +48,8 @@ module.exports = {
             path.resolve(__dirname, "src")
         ],
         extensions: [".js"],
-        // performance: {
-        //     hints: "warning", // enum
-        //     maxAssetSize: 200000, // int (in bytes),
-        //     maxEntrypointSize: 400000, // int (in bytes)
-        //     assetFilter: function (assetFilename) {
-        //         return assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
-        //     }
     },
     devtool: "source-map", // enum
-    // context: path.resolve(__dirname, "src"), // string (absolute path!)
     target: "web", // enum
     stats: "errors-only",
     devServer: {
