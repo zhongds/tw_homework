@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./main.css"></link>
+</head>
+<body>
+	<div class="cruise">
+		<h2>Cruise</h2>
+		<ul class='tabs'>
+			<li><a href='#dashboard'>DASHBOARD</a></li>
+			<li><a href='#my-cruise'>MY CRUISE</a></li>
+			<li><a href="#agents">AGENTS</a></li>
+			<li><a href="#help">HELP</a></li>
+		</ul>
+		<div class='tab-content'>
+			<div class='tab-panel' id="dashboard">this is dashboard</div>
+			<div class='tab-panel' id="my-cruise">this is my-cruise</div>
+			<div class='tab-panel' id="agents">this is agents</div>
+			<div class='tab-panel' id="help">this is help page</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function siblings(el) {
+			var a = []
+			var p = el.parentNode.children
+			for(var i =0,pl= p.length; i<pl; i++) {
+				if(p[i] !== el) a.push(p[i])
+			}
+			return a
+		}
+		function removeActiveClass(arr) {
+			for(var i=0; i<arr.length; i++) {
+				arr[i].classList.remove('active')
+			}
+		}
+
+		var el = document.getElementsByClassName("tabs")[0]
+		el.addEventListener("click", function(e){
+			e.target.parentNode.classList.add('active')
+			removeActiveClass(siblings(e.target.parentNode))
+			var targetId = e.target.getAttribute('href')
+			var targetPanel = document.querySelector(targetId)
+			targetPanel.classList.add('active')
+			removeActiveClass(siblings(targetPanel))
+		}, false)
+	</script>
+</body>
+</html>
