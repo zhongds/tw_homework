@@ -21,7 +21,7 @@ ul.tabs li a {
     margin-right: 2px;
     line-height: 1.42857143;
     border: 1px solid #ccc;
-    border-radius: 4px 4px 0 0;
+    border-radius: 10px 10px 0 0;
     display: block;
     padding: 10px 15px;
     color: #337ab7;
@@ -89,4 +89,10 @@ ul.tabs li.active a {
     content: "|";
     color: #bbb;
     padding: 5px;
+}
+
+.add:before{
+  content: "+";
+  font-weight: 900;
+  padding-right: 2px;
 }
