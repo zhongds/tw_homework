@@ -2,6 +2,7 @@
 .pr10 {padding-right: 10px;}
 .pr15 {padding-right: 15px;}
 
+.h20 {height: 20px;}
 .h100p {
     height: 100%;
 }
@@ -19,10 +20,15 @@
 .w80p {
     width: 80%;
 }
+.w100p {
+    width: 100%
+}
 
 .p15 {
     padding: 15px;
 }
+
+.fs12 {font-size: 12px;}
 
 .left {
     float: left;

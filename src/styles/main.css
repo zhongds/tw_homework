@@ -96,3 +96,50 @@ ul.tabs li.active a {
   font-weight: 900;
   padding-right: 2px;
 }
+
+.popover {
+    position: absolute;
+    top: 275px;
+    left: 110px;
+    line-height: 70px;    
+    height: 80px;
+    width: 45%;
+    z-index: 1060;
+    display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    background-color: #e0edd4;
+    background-clip: padding-box;
+    border: 3px solid #553d00;
+    border-radius: 18px;
+    padding: 10px;
+}
+
+.popover .arrow, .popover .arrow::after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.popover>.arrow {
+    top: -50px;
+    left: 50px;
+    border-bottom-color: #553d00;
+    border-width: 25px;
+}
+.popover>.arrow::after {
+    top: -24px;
+    margin-left: -27px;
+    content: " ";
+    border-top-width: 0;
+    border-bottom-color: #e0edd4;
+    border-width: 27px;
+}
