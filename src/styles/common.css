@@ -1,12 +1,21 @@
 .pl10 {padding-left: 10px;}
 .pr10 {padding-right: 10px;}
 .pr15 {padding-right: 15px;}
+.pt5 {padding-top: 5px;}
+.pb5 {padding-bottom: 5px;}
 
 .h20 {height: 20px;}
 .h100p {
     height: 100%;
 }
 
+
+.w65 {
+    width: 65px;
+}
+.w125 {
+    width: 125px;
+}
 
 .w20p {
     width: 20%;
@@ -55,4 +64,7 @@
 
 .cursor{
     cursor: pointer;
+}
+.hide {
+    display: none;
 }

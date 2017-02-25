@@ -33,10 +33,10 @@
 										<span class="pr15">02.tw.com</span>
 										<span class="split">idle</span>
 										<span class="split">192.168.1.2</span>
-										<span class="split">/var/lib/cruise-agents</span>
+										<span class="split">/const/lib/cruise-agents</span>
 									</div>
 									<div>
-										<a href='#' class='add inline-block'>Specify Resources</a>
+										<a href='#' class='add-resources inline-block'>Specify Resources</a>
 										<span class="split">Resources:</span>
 									</div>
 								</div>
@@ -45,9 +45,14 @@
 							<li class="">3</li>
 							<li class="">4</li>
 						</ul>
-						<div class="popover">
+						<div id="popover" class="popover hide">
 							<div class="arrow"></div>
-							<input class="w100p h20 fs12" />
+							<p class="tip">(separate mutiple resources name with commas)</p>
+							<input class="resources" />
+							<div class="pt5 pb5">
+								<button class="w125 cursor">Add Resources</button>
+								<button id="close" class="w65 cursor">Close</button>
+							</div>
 						</div>
 						<div class="w30p h100p"></div>
 					</div>
@@ -58,27 +63,43 @@
 	</div>
 	<script type="text/javascript">
 		function siblings(el) {
-			var a = []
-			var p = el.parentNode.children
-			for(var i =0,pl= p.length; i<pl; i++) {
+			const a = []
+			const p = el.parentNode.children
+			for(let i =0,pl= p.length; i<pl; i++) {
 				if(p[i] !== el) a.push(p[i])
 			}
 			return a
 		}
 		function removeActiveClass(arr) {
-			for(var i=0; i<arr.length; i++) {
+			for(let i=0; i<arr.length; i++) {
 				arr[i].classList.remove('active')
 			}
 		}
 
-		var el = document.getElementsByClassName("tabs")[0]
-		el.addEventListener("click", function(e){
+		const el = document.getElementsByClassName("tabs")[0]
+		el.addEventListener("click", e => {
 			e.target.parentNode.classList.add('active')
 			removeActiveClass(siblings(e.target.parentNode))
-			var targetId = e.target.getAttribute('href')
-			var targetPanel = document.querySelector(targetId)
+			const targetId = e.target.getAttribute('href')
+			const targetPanel = document.querySelector(targetId)
 			targetPanel.classList.add('active')
 			removeActiveClass(siblings(targetPanel))
+		}, false)
+
+		const resourceElList = document.getElementsByClassName('add-resources')
+		for(let resourceEl of resourceElList) {
+			resourceEl.addEventListener('click', e => {
+				const popoverElStyle = document.getElementById('popover').style
+				const height = resourceEl.offsetTop + resourceEl.clientHeight + 21
+				const strCss = `top:${height}px; display: block`
+				popoverElStyle.cssText += strCss
+			}, false)
+		}
+
+		const closeEl = document.getElementById('close')
+		closeEl.addEventListener("click", e => {
+			const popoverElStyle = document.getElementById('popover').style
+			popoverElStyle.cssText += 'display: none'
 		}, false)
 	</script>
 </body>

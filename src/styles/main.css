@@ -91,7 +91,7 @@ ul.tabs li.active a {
     padding: 5px;
 }
 
-.add:before{
+.add-resources:before{
   content: "+";
   font-weight: 900;
   padding-right: 2px;
@@ -99,10 +99,8 @@ ul.tabs li.active a {
 
 .popover {
     position: absolute;
-    top: 275px;
     left: 110px;
-    line-height: 70px;    
-    height: 80px;
+    height: 85px;
     width: 45%;
     z-index: 1060;
     display: block;
@@ -136,10 +134,27 @@ ul.tabs li.active a {
     border-width: 25px;
 }
 .popover>.arrow::after {
-    top: -24px;
+    top: -22px;
     margin-left: -27px;
     content: " ";
     border-top-width: 0;
     border-bottom-color: #e0edd4;
     border-width: 27px;
+}
+
+.popover .tip {
+    -webkit-margin-before: 5px;
+    -webkit-margin-after: 5px;
+}
+
+.popover .resources {
+    width: 100%;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.popover button {
+    border-radius: 15px;
+    border-color: black;
+    padding: 4px;
 }
