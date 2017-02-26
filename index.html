@@ -44,9 +44,54 @@
 									</div>
 								</div>
 							</li>
-							<li class="">2</li>
-							<li class="">3</li>
-							<li class="">4</li>
+							<li class="">
+								<span class="circle left"></span>
+								<div class="left pl10">
+									<div>
+										<span class="pr15">02.tw.com</span>
+										<span class="split">idle</span>
+										<span class="split">192.168.1.2</span>
+										<span class="split">/const/lib/cruise-agents</span>
+									</div>
+									<div>
+										<a href='#' class='add-resources inline-block'>Specify Resources</a>
+										<span class="split inline-block">Resources:</span>
+										<ul class="resources"></ul>
+									</div>
+								</div>
+							</li>
+							<li class="">
+								<span class="circle left"></span>
+								<div class="left pl10">
+									<div>
+										<span class="pr15">02.tw.com</span>
+										<span class="split">idle</span>
+										<span class="split">192.168.1.2</span>
+										<span class="split">/const/lib/cruise-agents</span>
+									</div>
+									<div>
+										<a href='#' class='add-resources inline-block'>Specify Resources</a>
+										<span class="split inline-block">Resources:</span>
+										<ul class="resources"></ul>
+									</div>
+								</div>
+							</li>
+							<li class="">
+								<span class="circle left"></span>
+								<div class="left pl10">
+									<div>
+										<span class="pr15">02.tw.com</span>
+										<span class="split">idle</span>
+										<span class="split">192.168.1.2</span>
+										<span class="split">/const/lib/cruise-agents</span>
+									</div>
+									<div>
+										<a href='#' class='add-resources inline-block'>Specify Resources</a>
+										<span class="split inline-block">Resources:</span>
+										<ul class="resources"></ul>
+									</div>
+								</div>
+							</li>
 						</ul>
 						<div id="popover" class="popover hide">
 							<div class="arrow"></div>
@@ -74,8 +119,8 @@
 			return a
 		}
 		function removeActiveClass(arr) {
-			for (let i = 0; i < arr.length; i++) {
-				arr[i].classList.remove('active')
+			for (let el of arr) {
+				el.classList.remove('active')
 			}
 		}
 
@@ -97,7 +142,8 @@
 				const height = resourceEl.offsetTop + resourceEl.clientHeight + 21
 				const strCss = `top:${height}px; display: block`
 				popoverElStyle.cssText += strCss
-				resourceEl.classList.add('click-here')
+				removeActiveClass(resourceElList)
+				resourceEl.classList.add('active')
 			}, false)
 		}
 
@@ -106,7 +152,7 @@
 		closeEl.addEventListener("click", e => {
 			const popoverElStyle = document.getElementById('popover').style
 			popoverElStyle.cssText += 'display: none'
-			document.querySelector('.add-resources.click-here').classList.remove('click-here')
+			document.querySelector('.add-resources.active').classList.remove('active')
 		}, false)
 
 		function splitWithCommas(str) {
@@ -121,7 +167,7 @@
 		saveEl.addEventListener("click", e => {
 			const inputEL = document.querySelector('#popover>input')
 			const arr = inputEL.value.split(',')
-			const resourcesEL = document.querySelector('.add-resources.click-here').parentNode.lastChild
+			const resourcesEL = document.querySelector('.add-resources.active').parentNode.lastChild
 
 			for (let text of arr) {
 				const node = document.createElement("li")         
