@@ -6,11 +6,10 @@ import tool from './tool'
 //click tab page
 const el = document.getElementsByClassName("tabs")[0]
 el.addEventListener("click", e => {
-    if (e.target.hash === '#agents') {
+    if (e.target.name === 'tab-agents') {
         e.target.parentNode.classList.add('active')
         tool.removeActiveClass(tool.siblings(e.target.parentNode))
-        const targetId = e.target.getAttribute('href')
-        const targetPanel = document.querySelector(targetId)
+        const targetPanel = document.getElementById('agents')
         targetPanel.classList.add('active')
         tool.removeActiveClass(tool.siblings(targetPanel))
     } else {
@@ -39,9 +38,7 @@ closeEl.addEventListener("click", e => {
     document.querySelector('.add-resources.active').classList.remove('active')
 }, false)
 
-//save resources
-const saveEl = document.getElementById('save')
-saveEl.addEventListener("click", e => {
+function saveResources() {
     const inputEL = document.querySelector('#popover>input')
     const arr = inputEL.value.split(',')
     const resourcesEL = document.querySelector('.add-resources.active').parentNode.lastChild
@@ -57,10 +54,19 @@ saveEl.addEventListener("click", e => {
         }, false)
         resourcesEL.appendChild(node)
     }
-    const popoverEl = saveEl.parentNode.parentNode
+    const popoverEl = document.getElementById('popover')
     popoverEl.style.cssText += 'display: none'
     popoverEl.getElementsByTagName('input')[0].value = ''
-}, false)
+}
 
+//save resources
+const saveEl = document.getElementById('save')
+const inputEl = document.querySelector('#popover>input')
+saveEl.addEventListener("click", saveResources, false)
+inputEl.addEventListener("keypress", e => {
+    if(e.keyCode === 13) {
+        saveResources()
+    }
+}, false)
 
 module.hot.accept()
