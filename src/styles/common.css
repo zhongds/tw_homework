@@ -5,6 +5,7 @@
 .pb5 {padding-bottom: 5px;}
 
 .h20 {height: 20px;}
+.h25 {height: 25px;}
 .h100p {
     height: 100%;
 }
@@ -22,6 +23,9 @@
 }
 .w30p {
     width: 30%;
+}
+.w50p {
+    width: 50%;
 }
 .w70p {
     width: 70%;
@@ -52,6 +56,9 @@
 
 ul {
     -webkit-padding-start: 0px !important;
+}
+li {
+    display: inline;
 }
 
 .inline-block {
