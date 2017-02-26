@@ -1,4 +1,6 @@
-function siblings(target) {
+const tool = {}
+
+tool.siblings = (target) => {
     const a = []
     const p = target.parentNode.children
     for (let el of p) {
@@ -6,13 +8,10 @@ function siblings(target) {
     }
     return a
 }
-function removeActiveClass(arr) {
+tool.removeActiveClass = (arr) => {
     for (let el of arr) {
         el.classList.remove('active')
     }
 }
 
-export default {
-    siblings,
-    removeActiveClass
-}
+export default tool
