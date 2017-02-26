@@ -93,20 +93,20 @@
 								</div>
 							</li>
 						</ul>
-						<div id="popover" class="popover hide">
-							<div class="arrow"></div>
-							<p class="tip">(separate mutiple resources name with commas)</p>
-							<input />
-							<div class="pt5 pb5">
-								<button id="save" class="w125 cursor">Add Resources</button>
-								<button id="close" class="w65 cursor">Close</button>
-							</div>
-						</div>
 						<div class="w30p h100p"></div>
 					</div>
 				</div>
 			</div>
 			<div class='tab-panel' id="help">this is help page</div>
+		</div>
+	</div>
+	<div id="popover" class="popover hide">
+		<div class="arrow"></div>
+		<p class="tip">(separate mutiple resources name with commas)</p>
+		<input />
+		<div class="pt5 pb5">
+			<button id="save" class="w125 cursor">Add Resources</button>
+			<button id="close" class="w65 cursor">Close</button>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -170,7 +170,7 @@
 			const resourcesEL = document.querySelector('.add-resources.active').parentNode.lastChild
 
 			for (let text of arr) {
-				const node = document.createElement("li")         
+				const node = document.createElement("li")
 				const textNode = document.createTextNode(text.trim())
 				const closeIcon = document.createElement("span")
 				node.appendChild(textNode)
