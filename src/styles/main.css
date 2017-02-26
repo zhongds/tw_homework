@@ -159,12 +159,17 @@ ul.tabs li.active a {
     padding: 4px;
 }
 
+ul.resources {
+    display: inline-block;
+}
 ul.resources li {
     display: inline;
     padding-left: 20px;
 }
-ul.resources li::after {
+ul.resources li>span::before {
     content: '\00d7';
+}
+ul.resources li>span {
     font-weight: 700;
     color: #99a390;
     border: 1px solid #ccc;
@@ -173,6 +178,8 @@ ul.resources li::after {
     line-height: 10px;
     display: inline-block;
     border-radius: 4px;
+    cursor: pointer;
+    margin-left: 2px;
 }
 ul.resources li:first-child {
     padding-left: 2px;

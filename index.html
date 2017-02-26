@@ -39,8 +39,9 @@
 									</div>
 									<div>
 										<a href='#' class='add-resources inline-block'>Specify Resources</a>
-										<ul class="resources split inline-block">Resources:
-											<li>ubuntu</li>
+										<span class="split inline-block">Resources:</span>
+										<ul class="resources">
+											<li>ubuntu</li>												
 										</ul>
 									</div>
 								</div>
@@ -122,16 +123,17 @@
 		saveEl.addEventListener("click", e => {
 			const inputEL = document.querySelector('#popover>input')
 			const arr = inputEL.value.split(',')
-			const resourcesEL = document.querySelector('.add-resources.click-here').nextSibling
+			const resourcesEL = document.querySelector('.add-resources.click-here').parentNode.lastChild
 
 			for (let text of arr) {
 				const node = document.createElement("li")         
 				const textNode = document.createTextNode(text.trim())
+				const closeIcon = document.createElement("span")
 				node.appendChild(textNode)
-				const childNode = document.createElement('span')
-				const childTextNode = document.createTextNode('X')
-				childNode.appendChild(childTextNode)
-				node.appendChild(childNode)
+				node.appendChild(closeIcon)
+				closeIcon.addEventListener('click', e => {
+					console.log(e.target)
+				}, false)
 				resourcesEL.appendChild(node)
 			}
 			const popoverEl = saveEl.parentNode.parentNode
