@@ -40,9 +40,7 @@
 									<div>
 										<a href='#' class='add-resources inline-block'>Specify Resources</a>
 										<span class="split inline-block">Resources:</span>
-										<ul class="resources">
-											<li>ubuntu</li>												
-										</ul>
+										<ul class="resources"></ul>
 									</div>
 								</div>
 							</li>
@@ -132,7 +130,7 @@
 				node.appendChild(textNode)
 				node.appendChild(closeIcon)
 				closeIcon.addEventListener('click', e => {
-					console.log(e.target)
+					e.target.parentNode.parentNode.removeChild(e.target.parentNode)
 				}, false)
 				resourcesEL.appendChild(node)
 			}
