@@ -16,8 +16,6 @@
 			<li><a href="#help">HELP</a></li>
 		</ul>
 		<div class='tab-content'>
-			<div class='tab-panel' id="dashboard">this is dashboard</div>
-			<div class='tab-panel' id="my-cruise">this is my-cruise</div>
 			<div class='tab-panel' id="agents">
 				<div class="agent">
 					<div class="content-header">
@@ -127,7 +125,6 @@
 					</div>
 				</div>
 			</div>
-			<div class='tab-panel' id="help">this is help page</div>
 		</div>
 	</div>
 	<div id="popover" class="popover hide">
@@ -156,12 +153,17 @@
 
 		const el = document.getElementsByClassName("tabs")[0]
 		el.addEventListener("click", e => {
-			e.target.parentNode.classList.add('active')
-			removeActiveClass(siblings(e.target.parentNode))
-			const targetId = e.target.getAttribute('href')
-			const targetPanel = document.querySelector(targetId)
-			targetPanel.classList.add('active')
-			removeActiveClass(siblings(targetPanel))
+			if (e.target.hash === '#agents') {
+				e.target.parentNode.classList.add('active')
+				removeActiveClass(siblings(e.target.parentNode))
+				const targetId = e.target.getAttribute('href')
+				const targetPanel = document.querySelector(targetId)
+				targetPanel.classList.add('active')
+				removeActiveClass(siblings(targetPanel))
+			} else {
+				alert('This function is developing!')
+			}
+
 		}, false)
 
 		//show add resources popover

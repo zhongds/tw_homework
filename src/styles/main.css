@@ -3,9 +3,8 @@
 }
 
 .tabs {
-    border-bottom: 1px solid #ddd;
     text-align: right;
-    margin-bottom: 0px;
+    margin-bottom: -3px;
 }
 
 ul.tabs li {
@@ -20,7 +19,8 @@ ul.tabs li a {
     text-decoration: none;
     margin-right: 2px;
     line-height: 1.42857143;
-    border: 1px solid #ccc;
+    border: 2px solid #232222;
+    border-bottom-color: transparent;
     border-radius: 10px 10px 0 0;
     display: block;
     padding: 10px 15px;
@@ -28,16 +28,14 @@ ul.tabs li a {
 }
 
 ul.tabs li.active a {
-    color: #555;
+    color: #fff;
     cursor: default;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
+    background-color: #545353;
+    padding-top: 15px;
 }
 
 .tab-content {
-    border: 1px solid #ccc;
-    border-top: none;
+    border: 2px solid #232222;
 }
 
 .tab-content .tab-panel {
@@ -51,6 +49,7 @@ ul.tabs li.active a {
     padding: 15px;
     background-color: #545353;
     color: #e0dfdf;
+    border-bottom: 2px solid #232222;
 }
 
 .tab-content .content-header span {
@@ -64,7 +63,6 @@ ul.tabs li.active a {
 
 .agents-list {
     margin-top: 0px;
-    border-right: 1px solid #ccc;  
 }
 
 .agents-list>li {
@@ -190,6 +188,11 @@ ul.resources li:first-child {
     width: 25%;
     padding: 20px;
     font-size: 14px;    
+    border-left: 2px solid #bbbbbb;
+}
+
+.summary, .history {
+    padding-bottom: 20px;
 }
 
 .summary .title, .history .title {
@@ -197,6 +200,10 @@ ul.resources li:first-child {
     font-weight: 500;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+.history ul {
+    margin-top: 5px;
 }
 
 .history li {
