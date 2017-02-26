@@ -23,12 +23,12 @@
 					<div class="content-header">
 						<div class="inline-block">Agents</div>
 						<span class="ellipse">All</span>
-						<span class="ellipse">Physical</span>
+						<span class="ellipse active">Physical</span>
 						<span class="ellipse">Virtual</span>
 					</div>
 					<div class="content-body">
 						<ul class="w70p agents-list left">
-							<li class="">
+							<li class="" style="background-color: #cce8b5">
 								<span class="circle left"></span>
 								<div class="left pl10">
 									<div>
@@ -44,7 +44,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
+							<li class="" style="background-color: #fffbb9">
 								<span class="circle left"></span>
 								<div class="left pl10">
 									<div>
@@ -60,7 +60,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
+							<li class="" style="background-color: #fffbb9">
 								<span class="circle left"></span>
 								<div class="left pl10">
 									<div>
@@ -76,7 +76,7 @@
 									</div>
 								</div>
 							</li>
-							<li class="">
+							<li class="" style="background-color: #cce8b5">
 								<span class="circle left"></span>
 								<div class="left pl10">
 									<div>
@@ -163,7 +163,7 @@
 				targetPanel.classList.add('active')
 				removeActiveClass(siblings(targetPanel))
 			} else {
-				alert('This function is developing!')
+				alert(`${e.target.innerHTML} page is developing!`)
 			}
 
 		}, false)
