@@ -182,13 +182,13 @@ ul.resources li>span::before {
 }
 ul.resources li>span {
     font-weight: 700;
-    color: #99a390;
-    border: 1px solid #ccc;
+    color: #6c6262;
+    border: 1px solid #958c8c;
     border-width: 2px;
     height: 12px;
     line-height: 10px;
     display: inline-block;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     margin-left: 2px;
 }
