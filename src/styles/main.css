@@ -66,7 +66,7 @@ ul.tabs li.active a {
     margin-top: 0px;
 }
 
-.agents-list li {
+.agents-list>li {
     padding: 10px;
     margin: 15px 10px;
     display: block;
@@ -147,7 +147,7 @@ ul.tabs li.active a {
     -webkit-margin-after: 5px;
 }
 
-.popover .resources {
+.popover>input {
     width: 100%;
     font-size: 12px;
     margin: 5px 0;
@@ -157,4 +157,23 @@ ul.tabs li.active a {
     border-radius: 15px;
     border-color: black;
     padding: 4px;
+}
+
+ul.resources li {
+    display: inline;
+    padding-left: 20px;
+}
+ul.resources li::after {
+    content: '\00d7';
+    font-weight: 700;
+    color: #99a390;
+    border: 1px solid #ccc;
+    border-width: 2px;
+    height: 12px;
+    line-height: 10px;
+    display: inline-block;
+    border-radius: 4px;
+}
+ul.resources li:first-child {
+    padding-left: 2px;
 }

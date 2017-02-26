@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+
 <body>
 	<div class="cruise">
 		<h2>Cruise</h2>
@@ -37,7 +39,9 @@
 									</div>
 									<div>
 										<a href='#' class='add-resources inline-block'>Specify Resources</a>
-										<span class="split">Resources:</span>
+										<ul class="resources split inline-block">Resources:
+											<li>ubuntu</li>
+										</ul>
 									</div>
 								</div>
 							</li>
@@ -48,9 +52,9 @@
 						<div id="popover" class="popover hide">
 							<div class="arrow"></div>
 							<p class="tip">(separate mutiple resources name with commas)</p>
-							<input class="resources" />
+							<input />
 							<div class="pt5 pb5">
-								<button class="w125 cursor">Add Resources</button>
+								<button id="save" class="w125 cursor">Add Resources</button>
 								<button id="close" class="w65 cursor">Close</button>
 							</div>
 						</div>
@@ -65,13 +69,13 @@
 		function siblings(el) {
 			const a = []
 			const p = el.parentNode.children
-			for(let i =0,pl= p.length; i<pl; i++) {
-				if(p[i] !== el) a.push(p[i])
+			for (let i = 0, pl = p.length; i < pl; i++) {
+				if (p[i] !== el) a.push(p[i])
 			}
 			return a
 		}
 		function removeActiveClass(arr) {
-			for(let i=0; i<arr.length; i++) {
+			for (let i = 0; i < arr.length; i++) {
 				arr[i].classList.remove('active')
 			}
 		}
@@ -86,21 +90,55 @@
 			removeActiveClass(siblings(targetPanel))
 		}, false)
 
+		//show add resources popover
 		const resourceElList = document.getElementsByClassName('add-resources')
-		for(let resourceEl of resourceElList) {
+		for (let resourceEl of resourceElList) {
 			resourceEl.addEventListener('click', e => {
 				const popoverElStyle = document.getElementById('popover').style
 				const height = resourceEl.offsetTop + resourceEl.clientHeight + 21
 				const strCss = `top:${height}px; display: block`
 				popoverElStyle.cssText += strCss
+				resourceEl.classList.add('click-here')
 			}, false)
 		}
 
+		//close
 		const closeEl = document.getElementById('close')
 		closeEl.addEventListener("click", e => {
 			const popoverElStyle = document.getElementById('popover').style
 			popoverElStyle.cssText += 'display: none'
+			document.querySelector('.add-resources.click-here').classList.remove('click-here')
+		}, false)
+
+		function splitWithCommas(str) {
+			let arr = str.split(',')
+			arr.map(val => {
+
+			})
+		}
+
+		//save resources
+		const saveEl = document.getElementById('save')
+		saveEl.addEventListener("click", e => {
+			const inputEL = document.querySelector('#popover>input')
+			const arr = inputEL.value.split(',')
+			const resourcesEL = document.querySelector('.add-resources.click-here').nextSibling
+
+			for (let text of arr) {
+				const node = document.createElement("li")         
+				const textNode = document.createTextNode(text.trim())
+				node.appendChild(textNode)
+				const childNode = document.createElement('span')
+				const childTextNode = document.createTextNode('X')
+				childNode.appendChild(childTextNode)
+				node.appendChild(childNode)
+				resourcesEL.appendChild(node)
+			}
+			const popoverEl = saveEl.parentNode.parentNode
+			popoverEl.style.cssText += 'display: none'
+			popoverEl.getElementsByTagName('input')[0].value = ''
 		}, false)
 	</script>
 </body>
+
 </html>

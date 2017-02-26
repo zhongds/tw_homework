@@ -39,6 +39,10 @@ module.exports = {
                     'style-loader',
                     'css-loader?sourceMap&-minimize',
                 ]
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: "url-loader?limit=8192"
             }
         ],
     },
