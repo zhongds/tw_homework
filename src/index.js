@@ -26,5 +26,3 @@ inputEl.addEventListener("keypress", e => {
         eventFunction.saveResources()
     }
 }, false)
-
-module.hot.accept()

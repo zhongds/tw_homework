@@ -2,11 +2,10 @@ var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
 var path = require('path')
+var CleanPlugin = require('clean-webpack-plugin')
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client',
-        'webpack/hot/only-dev-server',
         "./src/index"
     ],
     output: {
@@ -56,14 +55,8 @@ module.exports = {
     devtool: "source-map", // enum
     target: "web", // enum
     stats: "errors-only",
-    devServer: {
-        hot: true,
-        contentBase: '/',
-        compress: true,
-        port: process.env.PORT || 3000
-    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        new CleanPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "index.html"),
             hash: false,
@@ -71,7 +64,7 @@ module.exports = {
             filename: 'index.html',
             inject: 'body',
             minify: {
-                collapseWhitespace: true
+                collapseWhitespace: false
             }
         })
     ]

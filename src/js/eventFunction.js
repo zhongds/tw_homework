@@ -32,7 +32,7 @@ function popoverClose(e) {
 function saveResources(e) {
     const inputEL = document.querySelector('#popover>input')
     const arr = inputEL.value.split(',')
-    const resourcesEL = document.querySelector('.add-resources.active').parentNode.lastChild
+    const resourcesEL = document.querySelector('.add-resources.active').parentNode.querySelector('.resources')
 
     for (let text of arr) {
         const node = document.createElement("li")

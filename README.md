@@ -2,12 +2,20 @@
 tw_homework:
 https://github.com/zhongds/tw_homework.git
 -->
+Two ways to setup the project：
 
-## only dev environment
+### development environment
 ```
 　　npm install
 　　npm start
 ```
-then: open "http://localhost:3000" in browser
+
+### production environment
+```
+ 　　npm run build  
+ 　　npm run deploy:prod
+```
+
+open "http://localhost:3000" in browser
 
 #### default port : 3000, you can change the port in package.json file
