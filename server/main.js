@@ -4,16 +4,19 @@ var ejs = require('ejs')
 var webpack = require('webpack')
 var historyApiFallback = require('connect-history-api-fallback')
 var webpackConfig = require('../webpack.config')
+var compress = require('compression')
+
 var port = process.env.PORT || 3000
 var env = process.env.NODE_ENV || 'development'
 
 var app = express()
 app.use(historyApiFallback())
+app.use(compress())
 app.engine('html', ejs.__express)
 app.set('view engine', 'html')
 
 if (env === 'development') {
-    const entryArr = ['webpack-dev-server/client', 'webpack/hot/only-dev-server']
+    var entryArr = ['webpack-dev-server/client', 'webpack/hot/only-dev-server']
     webpackConfig.entry.concat(entryArr)
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
     var compiler = webpack(webpackConfig)
