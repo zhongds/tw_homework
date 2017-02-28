@@ -11,8 +11,9 @@ Two ways to setup the project：
 ```
 
 ### production environment
-```
- 　　npm run build  
+```　
+ 　　npm install
+   　npm run build  
  　　npm run deploy:prod
 ```
 
