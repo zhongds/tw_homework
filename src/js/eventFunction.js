@@ -34,7 +34,8 @@ function saveResources(e) {
     const arr = inputEL.value.split(',')
     const resourcesEL = document.querySelector('.add-resources.active').parentNode.querySelector('.resources')
 
-    for (let text of arr) {
+    for (let i=0; i<arr.length; i++) {
+        let text = arr[i]
         const node = document.createElement("li")
         const textNode = document.createTextNode(text.trim())
         const closeIcon = document.createElement("span")
