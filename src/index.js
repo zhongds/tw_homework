@@ -9,7 +9,8 @@ el.addEventListener("click", eventFunction.tabPageClick, false)
 
 //show resources popover
 const resourceElList = document.getElementsByClassName('add-resources')
-for (let resourceEl of resourceElList) {
+for (let i =0; i< resourceElList.length; i++) {
+    let resourceEl = resourceElList[i]
     resourceEl.addEventListener('click', eventFunction.popoverClick, false)
 }
 
